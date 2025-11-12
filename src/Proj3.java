@@ -38,7 +38,24 @@ public class Proj3 {
 
     // Bubble Sort
     public static <T extends Comparable> int bubbleSort(ArrayList<T> a, int size) {
-        // Finish Me
+        //REVIEW THIS !!!!
+
+        int numOfSwaps = 0;
+
+        boolean isSorted = false;
+        while (!isSorted) {
+            isSorted = true;
+            for (int i = 0; i < size - 1; i++) {           //FIXME!!! We don't need to do complete passes each time, since the largest values would start to add to the end of the list anyways. We can keep track of the number of passes and loop till size - 1 - pass
+                if (a.get(i).compareTo(a.get(i + 1)) > 0) {
+                    swap(a, i, i + 1);
+                    numOfSwaps++;
+
+                    isSorted = false;
+                }
+            }
+        }
+
+        return numOfSwaps;
     }
 
     // Odd-Even Transposition Sort
@@ -47,8 +64,14 @@ public class Proj3 {
     }
 
     public static void main(String [] args)  throws IOException {
-        //...
-        // Finish Me
-        //...
+        if (args.length != 3) {
+            System.out.println("Usage: java Proj3 [dataset name] [sorting algorithm] [number of lines]");
+        }
+
+        String dataSet = args[0];
+        String sortingAlgo = args[1];
+        int numOfLines = Integer.parseInt(args[2]);
+
+
     }
 }
