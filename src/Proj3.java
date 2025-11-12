@@ -5,11 +5,44 @@ public class Proj3 {
     // Sorting Method declarations
     // Merge Sort
     public static <T extends Comparable> void mergeSort(ArrayList<T> a, int left, int right) {
-        // Finish Me
+        if (left >= right) return;                      //FIXME!!! Check for all of the edge cases, e.g. a is empty or right > a.size()
+
+        int mid = left + (right - left) / 2;
+        mergeSort(a, left, mid);
+        mergeSort(a, mid + 1, right);
+
+        merge(a, left, mid, right);
     }
 
     public static <T extends Comparable> void merge(ArrayList<T> a, int left, int mid, int right) {
-        // Finish Me
+        ArrayList<T> temp = new ArrayList<T>();
+
+        int i = left;
+        int j = mid + 1;
+        while (i <= mid && j <= right) {
+            if (a.get(i).compareTo(a.get(j)) <= 0) {            //NOTE : <= makes the algorithm stable by keeping the relative positions of equal elements
+                temp.add(a.get(i));
+                i++;
+            }
+            else {
+                temp.add(a.get(j));
+                j++;
+            }
+        }
+
+        while (i <= mid) {
+            temp.add(a.get(i));                 //FIXME!!!! Can use post-increment inside a.get(i) instead of having it on a separate line
+            i++;
+        }
+
+        while (j <= right) {
+            temp.add(a.get(j));                //FIXME!!!! Can use post-increment inside a.get(i) instead of having it on a separate line
+            j++;
+        }
+
+        for (int idx = 0; idx < temp.size(); idx++) {
+            a.set(idx + left, temp.get(idx));
+        }
     }
 
     // Quick Sort
