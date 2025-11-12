@@ -38,8 +38,6 @@ public class Proj3 {
 
     // Bubble Sort
     public static <T extends Comparable> int bubbleSort(ArrayList<T> a, int size) {
-        //REVIEW THIS !!!!
-
         int numOfSwaps = 0;
 
         boolean isSorted = false;
@@ -60,7 +58,30 @@ public class Proj3 {
 
     // Odd-Even Transposition Sort
     public static <T extends Comparable> int transpositionSort(ArrayList<T> a, int size) {
-        // Finish Me
+        int numSwapsIfParallel = 0;
+
+        boolean isSorted = false;
+        while (!isSorted) {
+            isSorted = true;
+            //Bubble sort on even-indexed elements
+            for (int i = 0; i < size - 1; i += 2) {
+                if (a.get(i).compareTo(a.get(i + 1)) > 0) {
+                    swap(a, i, i + 1);
+                    isSorted = false;
+                }
+            }
+            numSwapsIfParallel++;                       //Count 1 phase of simultaneous comparisons of even-indexed elements
+            //Bubble sort on odd-indexed elements
+            for (int i = 1; i < size - 1; i += 2) {
+                if (a.get(i).compareTo(a.get(i + 1)) > 0) {
+                    swap(a, i, i + 1);
+                    isSorted = false;
+                }
+            }
+            numSwapsIfParallel++;                       //Count 1 phase of simultaneous comparisons of odd-indexed elements
+        }
+
+        return numSwapsIfParallel;
     }
 
     public static void main(String [] args)  throws IOException {
