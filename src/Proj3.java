@@ -47,11 +47,43 @@ public class Proj3 {
 
     // Quick Sort
     public static <T extends Comparable> void quickSort(ArrayList<T> a, int left, int right) {
-        // Finish Me
+        if (left >= right) return;
+
+        //Find pivot
+        int center = (left + right) / 2;
+        if (a.get(center).compareTo(a.get(left)) < 0) { swap(a, left, center); }
+        if (a.get(right).compareTo(a.get(left)) < 0) { swap(a, left, right); }
+        if (a.get(right).compareTo(a.get(center)) < 0) { swap(a, center, right); }
+        swap(a, center, right);             // FIXME!!! Confirm whether putting pivot at position right and right - 1 act the same way
+
+        int pivot = partition(a, left, right);
+
+        quickSort(a, left, pivot - 1);
+        quickSort(a, pivot + 1, right);
     }
 
+
     public static <T extends Comparable> int partition (ArrayList<T> a, int left, int right) {
-        // Finish Me
+        int pivot = right;
+        int i = left;
+        int j = right - 1;
+
+        while (i < j) {
+            while ((i < j) && (a.get(i).compareTo(a.get(pivot)) <= 0)) {
+                i++;
+            }
+            while ((i < j) && a.get(j).compareTo(a.get(pivot)) >= 0) {
+                j--;
+            }
+
+            if (i < j) {
+                swap(a, i, j);              // We can use Post-increments in the function call to make it concise
+                i++;
+                j++;
+            }
+        }
+        swap(a, i, pivot);
+        return i;          // Because after swapping a[i] and a[pivot], i would be pointing to the pivot value and pivot would be pointing to i value
     }
 
     static <T> void swap(ArrayList<T> a, int i, int j) {
