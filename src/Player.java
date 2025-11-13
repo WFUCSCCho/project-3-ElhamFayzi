@@ -5,7 +5,7 @@
  *                             as well as toString(), equals(), and compareTo(). Does not have getters or setters since each object of type Player is
  *                             only created using the parsed data set passed to the constructor
  * @author:                    Elham Fayzi
- * @date:                      Oct 21, 2025
+ * @date:                      Nov 13, 2025
  *
  * @DataSet:                   All Time Premier League Player Statistics (https://www.kaggle.com/datasets/rishikeshkanabar/premier-league-player-statistics-updated-daily)
  ******************************************************************/
