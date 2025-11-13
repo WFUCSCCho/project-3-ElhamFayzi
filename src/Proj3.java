@@ -62,11 +62,38 @@ public class Proj3 {
 
     // Heap Sort
     public static <T extends Comparable> void heapSort(ArrayList<T> a, int left, int right) {
-        // Finish Me
+        // Build MinHeap
+        for (int i = (right / 2) - 1; i >= left; i++) {
+            int leftChild = 2 * i + 1;                                  // leftChild is in index 2i on arrays that start from index 1, but since our array begins from 0th index, leftChild is at 2i + 1
+            int rightChild = (2 * i + 2 <= right) ? 2 * i + 2 : -1;
+            if ((a.get(i).compareTo(a.get(leftChild)) > 0) || ((rightChild != -1) && (a.get(i).compareTo(a.get(rightChild))) > 0)) {        //FIXME!!! Think about a better more concise way of checking if rightChild exists
+                heapify(a, i, right);
+            }
+        }
+
+        while (left <= right) {
+            swap(a, left, right);
+            right--;
+            heapify(a, left, right);
+        }
+
     }
 
     public static <T extends Comparable> void heapify (ArrayList<T> a, int left, int right) {
-        // Finish Me
+        int min = left;
+        int leftChild = 2 * min + 1;                               // leftChild is in index 2i on arrays that start from index 1, but since our array begins from 0th index, leftChild is at 2i + 1
+        int rightChild = 2 * min + 2;
+
+        if ((leftChild < right) && (a.get(leftChild).compareTo(a.get(min)) < 0)) {
+            min = leftChild;
+        }
+        if ((rightChild < right) && (a.get(rightChild).compareTo(a.get(min)) < 0)) {
+            min = rightChild;
+        }
+        if (min != left) {
+            swap(a, left, min);
+            heapify(a, min, right);
+        }
     }
 
     // Bubble Sort
