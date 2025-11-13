@@ -152,4 +152,4 @@ for each file (providing file description, author, date, and acknowledgement).
 ## Some Notes for the Grader and Acknowledgements:
 * `DatasetExpander.java` is a self-written class used to that takes an existing CSV dataset and randomly generates additional entries to increase its size. I wrote this class to randomly expand my dataset from roughly 570 entries to approximately 15,000 entries for better graphing and runtime analysis. Both the original dataset and the expanded version are available within the same directory.
 
-* `run.sh` is a shell script I wrote to automate running all test cases for different data sizes across each sorting algorithm. It can be executed using bash `run.sh`, should it be needed.
+* `run.sh` is a shell script I wrote to automate running all test cases for different data sizes across each sorting algorithm. It can be executed using `bash run.sh`, should it be needed.
