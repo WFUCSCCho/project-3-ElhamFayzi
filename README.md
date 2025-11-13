@@ -96,17 +96,35 @@ vs. N for each case. Take a screenshot of your graph and put them here by modify
 it to this repository.
 
 Bubble Sort, Merge Sort, Quick Sort, and Heap Sort running time (already sorted):
-![image](https://github.com/user-attachments/assets/76f103c8-8c02-4bec-9966-99568f2effb6)
+
+<img width="501" height="322" alt="Screenshot 2025-11-13 at 1 53 49 AM" src="https://github.com/user-attachments/assets/925d6137-89a5-4c90-987d-c1b9bf8ef493" />
+
 
 Bubble Sort, Merge Sort, Quick Sort, and Heap Sort running time (shuffled):
 
+<img width="504" height="316" alt="Screenshot 2025-11-13 at 1 54 55 AM" src="https://github.com/user-attachments/assets/3ab091a4-f58e-46fe-93a3-48515220b62f" />
+
+
+
 Bubble Sort, Merge Sort, Quick Sort, and Heap Sort running time (reversed):
+
+<img width="501" height="301" alt="Screenshot 2025-11-13 at 1 55 56 AM" src="https://github.com/user-attachments/assets/ab1237d3-75cf-4c1b-9e1b-3b35164819f8" />
+
 
 Bubble Sort and Odd-Even Transposition Sort comparison (already sorted):
 
+<img width="420" height="281" alt="Screenshot 2025-11-13 at 1 56 32 AM" src="https://github.com/user-attachments/assets/4789039f-791c-458b-a331-610c32e5519f" />
+
+
 Bubble Sort and Odd-Even Transposition Sort comparison (shuffled):
 
+<img width="857" height="282" alt="Screenshot 2025-11-13 at 1 58 34 AM" src="https://github.com/user-attachments/assets/b53b228b-8170-4ac6-b758-810d3695aa99" />
+
+
 Bubble Sort and Odd-Even Transposition Sort comparison (reversed):
+
+<img width="919" height="271" alt="Screenshot 2025-11-13 at 2 00 37 AM" src="https://github.com/user-attachments/assets/17fcaafb-41fe-4805-9188-0fdad1588e9b" />
+
 
 ## Submission:
 
@@ -129,3 +147,9 @@ for each file (providing file description, author, date, and acknowledgement).
 ∗ @date: November 13, 2025
 ∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗/
 ```
+
+
+## Some Notes for the Grader and Acknowledgements:
+* `DatasetExpander.java` is a self-written class used to that takes an existing CSV dataset and randomly generates additional entries to increase its size. I wrote this class to randomly expand my dataset from roughly 570 entries to approximately 15,000 entries for better graphing and runtime analysis. Both the original dataset and the expanded version are available within the same directory.
+
+* `run.sh` is a shell script I wrote to automate running all test cases for different data sizes across each sorting algorithm. It can be executed using `bash run.sh`, should it be needed.
